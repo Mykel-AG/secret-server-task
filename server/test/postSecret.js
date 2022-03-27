@@ -104,7 +104,8 @@ describe('GET /secret', () => {
 
 describe('GET /secret', () => {
     it('It should NOT get a secret, return status 404, when hash gets no match', function (done) {
-        const hash = "incbaadhassh";
+        // invalid hash. 
+        const hash = "aaaaaaaaaaaaaaaa";
         request(app)
             .get(`/secret/${hash}`)
             .set('Accept', 'application/json')
@@ -162,5 +163,38 @@ describe('GET /secret/:hash', () => {
                 });
         });
 
+    });
+});
+
+//TESTS FOR INVALID ROUTES
+
+describe('GET /secrt', () => {
+    it('it should Return 404 with message Invalid Route', (done) => {
+        request(app)
+            .get(`/secrt`)
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(404)
+            .end((err, res) => {
+                res.body.should.have.property('message').eql('Invalid Route');
+                res.body.should.be.a('object');
+                done();
+            });
+    });
+});
+
+describe('POST /secrt', function () {
+    it('it should Return 404 with message Invalid Route', function (done) {
+        request(app)
+            .post('/secrt')
+            .send({ secret: '', expireAfter: 30 })
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(404)
+            .end(function (err, res) {
+                res.body.should.have.property('message').eql('Invalid Route');
+                res.body.should.be.a('object');
+                done();
+            });
     });
 });

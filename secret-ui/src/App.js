@@ -37,7 +37,7 @@ function App() {
             </div>
           </Content>
 
-    <Footer style={{ textAlign: 'center', bottom: 0 }}>Secrets Page ©2022 Created by Michael Adegboro</Footer>
+    <Footer className='footer-container'>Secrets Page ©2022 Created by Michael Adegboro</Footer>
         </Layout>
       </BrowserRouter>
     </div>

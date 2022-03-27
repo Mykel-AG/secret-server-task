@@ -18,7 +18,7 @@ function Home({ handlePageChange }) {
                     <Card title="Add secret" hoverable={true}>
                         <p>Add a secret, set the expiry and get a unique hash for retrieving it.</p>
                         <Link onClick={() => handlePageChange(2)} to={"/add"} className="nav-link">
-                            <Button type="primary" key="console">
+                            <Button shape="round" type="primary" key="console">
                                 Continue
                             </Button>
                         </Link>

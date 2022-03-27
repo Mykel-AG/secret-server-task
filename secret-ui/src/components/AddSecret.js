@@ -1,6 +1,6 @@
 import { Form, Input, InputNumber, Button, Col, Row, Typography, notification, Spin } from 'antd';
 import { useState } from 'react';
-import { storeSecret } from '../service/SecretService';
+import { storeSecret } from '../services/SecretService';
 import { MemoizedResultModal as ResultModal } from './ResultModal';
 const { Title } = Typography;
 /* eslint-disable no-template-curly-in-string */

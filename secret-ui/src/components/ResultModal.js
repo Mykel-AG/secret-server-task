@@ -82,4 +82,4 @@ function ResultModal(props) {
     )
 }
 
-export default ResultModal
+export const MemoizedResultModal = React.memo(ResultModal)

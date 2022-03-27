@@ -1,7 +1,7 @@
 import { Form, Input, InputNumber, Button, Col, Row, Typography, notification, Spin } from 'antd';
 import { useState } from 'react';
 import { storeSecret } from '../service/SecretService';
-import ResultModal from './ResultModal';
+import { MemoizedResultModal as ResultModal } from './ResultModal';
 const { Title } = Typography;
 /* eslint-disable no-template-curly-in-string */
 const validateMessages = {
@@ -47,12 +47,10 @@ function AddSecret() {
             else {
                 const errorMessage = res.data?.data ? res.data.data.map((val) => `${val.param}: ${val.msg}`) : '';
                 openNotification({ title: res.data.message, content: errorMessage.join(' | ') });
-                setModalData({ showModal: false, modalContent: '' });
                 
             }
         } catch (err) {
             openNotification({ title: err, content: ''})
-            setModalData({ showModal: false, modalContent: '' });
         }
     }
 

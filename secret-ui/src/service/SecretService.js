@@ -1,5 +1,5 @@
 const axios = require('axios');
-const apiUrl = "https://safe-mesa-34154.herokuapp.com/"
+const apiUrl = "https://myk-secret-server.herokuapp.com/"
 
 function responseFormatter(response){
     const res = {

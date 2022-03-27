@@ -9,7 +9,8 @@ const cors = require("cors");
 const Routes = require('./app/routes');
 const db = require("./app/models");
 
-app.use(cors({ origin: ["http://localhost:8081", "http://localhost:3000"],  }));
+//Add origin
+app.use(cors({ origin: ["http://localhost:8081", "http://localhost:3000", "https://623fc08290a68f6e2e84b64b--keen-fox-5359b3.netlify.app"],  }));
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
